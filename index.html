@@ -35,6 +35,16 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\\[','\\]']],
+            processEscapes: true
+        }
+    });
+</script>
 </head>
 
 <body>
@@ -104,6 +114,16 @@
                     <span>Code (Coming Soon)</span>
                   </a>
                 </span>
+
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="https://youtu.be/b2vo96IjzpY" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
               </div>
 
             </div>
@@ -124,33 +144,189 @@
     </div>
   </section>
   <!-- Tmp. -->
-  <section class="section">
+  <!-- <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Site under construction.</h2>
         </div>
       </div>
-  </section>
+  </section> -->
   <!--/ Tmp. -->
 
 
   <!-- Abstract. -->
-  <!-- <section class="section is-light">
+  <section class="section is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-             
+              For designing a wide range of everyday objects, the design process should be aware of both the human body and the underlying semantics of the design specification. However, these two objectives present significant challenges to the current AI-based designing tools. In this work, we present a method to synthesize body-aware 3D objects from a base mesh given an input body geometry and either text or image as guidance. The generated objects can be simulated on virtual characters, or fabricated for real-world use. We propose to use a mesh deformation procedure that optimizes for both semantic alignment as well as contact and penetration losses. Using our method, users can generate both virtual or real-world objects from text, image, or sketch, without the need for manual artist intervention. We present both qualitative and quantitative results on various object categories, demonstrating the effectiveness of our approach.
             </p>
           </div>
         </div>
       </div>
-  </section> -->
+  </section>
   <!--/ Abstract. -->
 
+
+  <!-- Paper video. -->
+  <section class="section">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/b2vo96IjzpY?si=_gD-e0mE9ByT1XQA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Paper video. -->
+
+  <section class="section is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Our Generated 3D Objects</h2>
+          <!-- <div id="results-carousel" class="carousel results-carousel" data-slides-to-show="1">
+            <div class="carousel-slide">
+              <img src="static/images/result_1.png" alt="result">
+            </div>
+            <div class="carousel-slide">
+              <img src="static/images/result_2.png" alt="result">
+            </div>
+            <div class="carousel-slide">
+              <img src="static/images/result_3.png" alt="result">
+            </div>
+            <div class="carousel-slide">
+              <img src="static/images/result_4.png" alt="result">
+            </div>
+          </div> -->
+          <img src="./static/images/figure_2.png" alt="results" class="my-4" />
+
+          <div class="content has-text-justified mt-4 ">
+            <p> Our method generates a variety of semantics and body-aware objects from input text prompts. </p>
+          </div>
+
+          <img src="./static/images/fabrication_1.png" alt="Fabrication" class="my-4" />
+          <img src="./static/images/fabrication_2.png" alt="Fabrication" />
+          <div class="content has-text-justified mt-4">
+            <p> <b>Real-world fabrication.</b> We fabricated the objects in the real world with 3D
+              printing. The objects can be worn as accessories on real people and characters. </p>
+          </div>
+        </div>
+  </section>
+
+  <!-- method -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">How does it work?</h2>
+          <img src="./static/images/method_fig.png" alt="Methods Figure" />
+          <div class="content has-text-justified mt-4">
+            <p> Our goal is to design rigid objects that satisfy diverse contact constraints for different body shapes and semantics. We synthesize body-aware 3D objects from a base mesh given an input body geometry and either text or image as guidance. We propose to use a mesh deformation procedure that optimizes for both semantic alignment as well as contact and penetration losses. The user has the option to specify the semantic goals with a text prompt or an input image. Depending on the input modality, our system uses different losses to guide the optimization.
+            </p>
+          </div>
+        </div>
+      </div>
+  </section>
+  <!-- method -->
+
+  <!-- losses -->
+  <section class="section is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Introducing Body-awareness to Generative Models </h2>
+          <img src="./static/images/loss_ablation.png" alt="Loss Figure" />
+          <div class="content has-text-justified mt-4">
+            <p> We introduce two losses that enable generated objects to integrate seamless onto an user's body. We introduce $\mathcal{L}_c$ for contact loss, and $\mathcal{L}_p$ for penetration loss, and we define the overall body-aware loss to be $\mathcal{L}_b = \mathcal{L}_c + \mathcal{L}_p$. <br /><br />
+
+              Given contact vertices $\mathcal{V}_c$, the contact loss $\mathcal{L}_c$ is defined as
+              \begin{equation}
+              \mathcal{L}_c(\mathcal{V}, \mathcal{V}_c) = \lambda_c\frac{1}{|\mathcal{V}_c|} \sum_{v_c \in \mathcal{V}_c} \min_{v \in \mathcal{V}} || v_c - v||^2_2,
+              \label{eq:contact_loss}
+              \end{equation}
+              where $\lambda_{contact}$ is a tunable weight. This encourages the object to be in contact with the body vertices specified by the input contact vertices. To reduce penetration between the object and the body mesh $\mathcal{M}_b$, we include an additional loss $\mathcal{L}_p$:
+              \begin{equation}
+              \mathcal{L}_p(\mathcal{M}, \mathcal{M}_b) = \sum_{d_i < D} {d_i}^2, \label{eq:pen_loss} \end{equation} where $d_i$ are signed distances between the object and the body mesh, and $D$ is the penetration distance threshold. In total, the body-aware optimization loss is defined as: \begin{equation} \mathcal{L}_b(\mathcal{V}, \mathcal{V}_c, \mathcal{M}, \mathcal{M}_b)=\lambda_c \mathcal{L}_c(\mathcal{V}, \mathcal{V}_c) + \lambda_p \mathcal{L}_p(\mathcal{M}, \mathcal{M}_b). \end{equation} </p>
+          </div>
+
+        </div>
+      </div>
+  </section>
+  <!-- losses -->
+
+  <!-- evolution -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Evolution of design throughout optimization iterations</h2>
+          <img src="./static/images/method_fig_evolution.png" alt="Methods Figure" />
+          <div class="content has-text-justified mt-4">
+            <p> <b>Shape optimization through Jacobians. </b>The design parameterization plays a significant role in the difficult design optimization problem.
+              Naive optimization of the mesh deformation through vertex displacement can result in significant artifacts and is prone to convergence to local minima. Inspired by Neural Jacobian Fields, we indirectly optimize the deformation map by optimizing a set of per-triangle Jacobian matrices $J_i\in\mathbb{R}^{3\times 3}$ for every face $f_i\in\mathcal{F}$.
+              The deformation map $\Phi^\ast$ is computed as the mapping with Jacobian matrices that are closest to $\{J_i\}$, solved via the following Poisson optimization problem:
+              % By solving the following Poisson optimization problem, we compute a deformation map $\Phi^\ast$ as the mapping with Jacobian matrices for each face that are closest to $\{J_i\}$:
+              \begin{equation}
+              \Phi^\ast = \min_{\Phi} \sum_{f_i\in\mathcal{F}}|f_i|\lVert \nabla_i(\Phi) - J_i\rVert_2^2,
+              \label{eq:poisson_equation}
+              \end{equation}
+              where $\nabla_i(\Phi)$ denotes the Jacobian of $\Phi$ at triangle $f_i$ and $|f_i|$ is the area of that triangle.</p>
+          </div>
+        </div>
+  </section>
+  <!-- evolution -->
+
+  <!-- gallery -->
+  <section class="section is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Generalization to Body Shapes</h2>
+          <div id="results-carousel" class="carousel results-carousel" data-slides-to-show="1">
+            <div class="carousel-slide">
+              <img src="static/images/characters_exp_glasses.png" alt="glasses">
+            </div>
+            <div class="carousel-slide">
+              <img src="static/images/characters_exp_bangle.png" alt="bangle">
+            </div>
+            <div class="carousel-slide">
+              <img src="static/images/characters_exp_slipper.png" alt="slipper">
+            </div>
+            <div class="carousel-slide">
+              <img src="static/images/characters_exp_hat.png" alt="hat">
+            </div>
+          </div>
+          <div class="content has-text-justified mt-4">
+            <p> <b>Different body shapes.</b> We evaluate our system on different body shapes, ranging from human adults and children to virtual characters such as dinosaurs and cartoon-looking cows. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- gallery -->
+
+
+  <!-- sketch -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <!-- <h2 class="title is-3">Introducing Body-awareness to Generative Models </h2> -->
+          <img src="./static/images/sketch.png" alt="Sketch Figure" />
+          <div class="content has-text-justified mt-4">
+            <p><b> Sketch to body-fitting 3D object. </b>We show a sketch application
+              with ShapeCraft. We ask a user to draw a sketch of an object, and we use ControlNet to convert the sketch into a 2D image. The image is used as an input to our image-guided mesh deformation method. </p>
+          </div>
+        </div>
+      </div>
+  </section>
+  <!-- sketch -->
 
   <!-- <section class="section" id="BibTeX">
     <div class="container is-four-fifths content">
@@ -163,7 +339,6 @@
   </code></pre>
     </div>
   </section> -->
-
 
   <footer class="footer">
     <div class="container">
